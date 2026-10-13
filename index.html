@@ -1,0 +1,68 @@
+<div style="font-family: Arial, Helvetica, sans-serif; background-color: #ffffff; border: 2px solid #27ae60; border-radius: 8px; padding: 22px; width: 100%; box-sizing: border-box; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #1e8449; margin-top: 0; font-size: 22px; display: flex; align-items: center;">
+        <span style="background-color: #27ae60; color: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 14px; margin-right: 10px;"></span>
+        Self-Checking Absorption Efficiency Math Calculator
+    </h3>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+        
+        <!-- LION CALCULATION CARD -->
+        <div style="flex: 1; min-width: 280px; background-color: #fdf2e9; border: 1px solid #edbb99; padding: 18px; border-radius: 6px;">
+            <h4 style="margin-top: 0; color: #a04000;">1. African Lion Absorption Efficiency</h4>
+            <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+                <li><strong>Food Eaten per Day:</strong> 6.2 kg (Meat)</li>
+                <li><strong>Waste Egested per Day:</strong> 1.0 kg (Feces)</li>
+            </ul>
+            
+            <label for="lion-math-val" style="font-weight: bold; font-size: 14px; color: #2c3e50; display: block; margin-bottom: 5px;">Your Calculated Percentage (%):</label>
+            <div style="display: flex; gap: 8px;">
+                <input type="number" id="lion-math-val" step="0.1" placeholder="e.g. 74.5" style="flex: 1; padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px; font-size: 14px;" />
+                <button type="button" style="background-color: #d35400; color: #ffffff; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;"
+                    onclick="
+                        var val = parseFloat(document.getElementById('lion-math-val').value);
+                        var feedback = document.getElementById('lion-feedback');
+                        if(!isNaN(val) && val >= 83.8 && val <= 84.0) {
+                            feedback.style.color = '#27ae60';
+                            feedback.innerText = '✅ Correct! Lion Efficiency = 83.9%. Meat is highly digestible!';
+                        } else {
+                            feedback.style.color = '#c0392b';
+                            feedback.innerText = '❌ Check your math: (5.2 / 6.2) * 100 = 83.9%';
+                        }
+                    ">
+                    Check
+                </button>
+            </div>
+            <div id="lion-feedback" style="font-weight: bold; font-size: 13px; margin-top: 8px; min-height: 20px;"></div>
+        </div>
+
+        <!-- ELEPHANT CALCULATION CARD -->
+        <div style="flex: 1; min-width: 280px; background-color: #eaf2f8; border: 1px solid #a9cce3; padding: 18px; border-radius: 6px;">
+            <h4 style="margin-top: 0; color: #1b4f72;">2. African Elephant Absorption Efficiency</h4>
+            <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 12px;">
+                <li><strong>Food Eaten per Day:</strong> 58.0 kg (Plants)</li>
+                <li><strong>Waste Egested per Day:</strong> 24.7 kg (Feces)</li>
+            </ul>
+            
+            <label for="ele-math-val" style="font-weight: bold; font-size: 14px; color: #2c3e50; display: block; margin-bottom: 5px;">Your Calculated Percentage (%):</label>
+            <div style="display: flex; gap: 8px;">
+                <input type="number" id="ele-math-val" step="0.1" placeholder="e.g. 48.6" style="flex: 1; padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px; font-size: 14px;" />
+                <button type="button" style="background-color: #2980b9; color: #ffffff; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;"
+                    onclick="
+                        var val = parseFloat(document.getElementById('ele-math-val').value);
+                        var feedback = document.getElementById('ele-feedback');
+                        if(!isNaN(val) && val >= 57.3 && val <= 57.5) {
+                            feedback.style.color = '#27ae60';
+                            feedback.innerText = '✅ Correct! Elephant Efficiency = 57.4%. Plant fiber is hard to digest!';
+                        } else {
+                            feedback.style.color = '#c0392b';
+                            feedback.innerText = '❌ Check your math: (33.3 / 58.0) * 100 = 57.4%';
+                        }
+                    ">
+                    Check
+                </button>
+            </div>
+            <div id="ele-feedback" style="font-weight: bold; font-size: 13px; margin-top: 8px; min-height: 20px;"></div>
+        </div>
+
+    </div>
+</div>
